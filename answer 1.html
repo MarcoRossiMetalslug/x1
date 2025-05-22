@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="cabecera">
+            <div id="logo">
+                <img src="img/Logo-ISIL.webp" alt="">
+            </div>
+            <div id="titulo">
+                <h1>Introduccion a la programacion</h1>
+            </div>
+
+        </div>
+        <div id="contenido">
+            <div id="enunciado">
+                <p>Ejercicio 01 :Diseñe un programa que permita el ingreso el nombre de un estudiante, el nombre del curso, su nota final, el número de clases del ciclo y el número de clases que no asistió. En el caso que las ausencias superen el 20% del número de clases del ciclo su nota definitiva será 0 (cero). Visualice el nombre, la asignatura, la nota y una anotación, en el caso de la nota cero la anotación será el motivo de la desaprobación.</p>
+            </div>
+            <div id="resultado">
+                <script>
+                    // Solicitar datos al usuario
+                    var nombre = prompt("Ingrese el nombre del estudiante:");
+                    var curso = prompt("Ingrese el nombre del curso:");
+                    var nota = parseFloat(prompt("Ingrese la nota final del estudiante:"));
+                    var totalClases = parseFloat(prompt("Ingrese el número total de clases del ciclo:"));
+                    var ausencias = parseFloat(prompt("Ingrese el número de clases que no asistió el estudiante:"));
+
+                    // Calcular el porcentaje de ausencias
+                    var porcentajeAusencias = (ausencias / totalClases) * 100;
+
+                    var notaDefinitiva = nota;
+                    var anotacion = "Aprobado";
+
+                    // Verificar si supera el 20% de ausencias
+                    if (porcentajeAusencias > 20) {
+                        notaDefinitiva = 0;
+                        anotacion = "Desaprobado por inasistencia.";
+                    } else {
+                        anotacion="Aprobado"
+                    }
+
+                    // Mostrar los resultados
+                    document.write("<h2>Resultado del Estudiante</h2>");
+                    document.write("<p><strong>Nombre:</strong> " + nombre + "</p>");
+                    document.write("<p><strong>Curso:</strong> " + curso + "</p>");
+                    document.write("<p><strong>Nota Final:</strong> " + notaDefinitiva + "</p>");
+                    document.write("<p><strong>Anotación:</strong> " + anotacion + "</p>");
+
+                              
+                
+
+
+                </script>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
